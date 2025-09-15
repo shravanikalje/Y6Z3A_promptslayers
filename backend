@@ -1,0 +1,38 @@
+from flask import Flask, request, render_template, jsonify
+import openai
+
+app = Flask(__name__)
+
+# 🔑 Add your OpenAI API key here
+openai.api_key = "YOUR_OPENAI_API_KEY"
+
+@app.route("/")
+def home():
+    return render_template("index.html")  # serve your frontend page
+
+@app.route("/poem", methods=["POST"])
+def generate_poem():
+    data = request.get_json()
+    keyword = data.get("keyword", "")
+
+    if not keyword:
+        return jsonify({"error": "Please provide a word or theme."}), 400
+
+    try:
+        # Call OpenAI API
+        response = openai.Completion.create(
+            engine="text-davinci-003",  # or gpt-4 if available
+            prompt=f"Write a short, 4-line poem about {keyword}.",
+            max_tokens=60,
+            temperature=0.7
+        )
+
+        poem = response.choices[0].text.strip()
+        return jsonify({"poem": poem})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
