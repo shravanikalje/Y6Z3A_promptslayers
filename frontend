@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verse Weaver</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Georgia', serif;
+    }
+
+    body {
+      background: #faf9f7;
+      color: #3d3d3d;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    /* Header */
+    .logo {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #2c3e50;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 28px;
+      height: 28px;
+    }
+
+    .subtitle {
+      margin-top: 15px;
+      font-size: 1.2rem;
+      color: #6c6c6c;
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .quote {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      font-style: italic;
+      color: #9a9a9a;
+    }
+
+    /* Input box */
+    .inspiration-box {
+      margin-top: 40px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0px 4px 15px rgba(0,0,0,0.05);
+      padding: 30px;
+      text-align: center;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .inspiration-box h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+
+    .inspiration-box p {
+      font-size: 0.95rem;
+      color: #7a7a7a;
+      margin-bottom: 20px;
+    }
+
+    .input-container {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .input-container input {
+      flex: 1;
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      transition: border 0.2s ease;
+    }
+
+    .input-container input:focus {
+      border-color: #6a7cff;
+    }
+
+    .input-container button {
+      background: #6a7cff;
+      border: none;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .input-container button:hover {
+      background: #5868d9;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="logo">
+    ✒️ Verse Weaver
+  </div>
+  
+  <p class="subtitle">
+    Transform a single word into four lines of poetry. Enter any keyword or theme,<br>
+    and watch as verses unfold.
+  </p>
+  
+  <p class="quote">
+    "Every word holds a poem waiting to be born"
+  </p>
+
+  <div class="inspiration-box">
+    <h2>Enter Your Inspiration</h2>
+    <p>A single word, a feeling, a moment...</p>
+
+    <div class="input-container">
+      <input type="text" placeholder="moon, hope, cat, ocean...">
+      <button>Weave</button>
+    </div>
+  </div>
+
+</body>
+</html>
